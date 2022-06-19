@@ -1,0 +1,180 @@
+.verification_data_container {
+	margin-right: 15px;
+}
+
+.verification_data_container > div {
+	flex: 1;
+	width: 100%;
+	padding: 8px;
+}
+
+.verification_data_container h2 {
+	margin-top: 0;
+}
+.verification_block {
+	display: flex;
+	flex-direction: column;
+	margin: 0px 10px;
+	width: 15rem;
+}
+.block-title {
+	font-weight: bold;
+}
+
+.verification_block .verification_img {
+	max-width: 200px;
+	height: 110px;
+	width: 180px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	cursor: pointer;
+	margin: 0.4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.data-display-wrapper .verification_block .verification_img .search_icon,
+.data-display-wrapper .verification_block .verification_img:hover .search_icon,
+.verification_block .verification_img .search_icon {
+	display: none;
+}
+.verification_block .verification_img:hover .search_icon {
+	display: block;
+	font-size: 30px;
+}
+.verified-container {
+	width: 15rem !important;
+}
+
+.verification_data_container--actions {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.verification_data_container--actions > *:not(:last-child) {
+	margin-right: 12px;
+}
+
+.jsonkey-wrapper {
+	display: flex;
+}
+
+.json_wrapper pre,
+.jsonkey-wrapper pre {
+	padding-left: 8px;
+	color: #ffffff;
+}
+.ant-card,
+.ant-card-head,
+.ant-card-type-inner .ant-card-head {
+	background-color: var(--admin_panel_card_background);
+	color: #ffffff;
+}
+.ant-card-bordered {
+	border: 1px solid #c4c4c4;
+}
+.ant-modal-header {
+	border: 1px solid var(--admin_panel_modal_border);
+}
+.ant-modal-header .ant-modal-title {
+	color: #ffffff;
+	font-weight: bold;
+}
+.ant-modal-header,
+.ant-modal-content,
+.ant-modal-confirm-body .ant-modal-confirm-content {
+	background-color: var(--admin_panel_modal_background);
+	color: #ffffff;
+}
+.ant-modal-close-icon path {
+	fill: #ffffff;
+}
+/* .verification-confirm-modal {
+	height: 15rem;
+} */
+.verification-confirm-modal .ant-btn {
+	width: 18rem;
+	height: 3rem;
+}
+.zoom-image-modal .image-wrapper {
+	height: 50rem;
+}
+.zoom-image-modal .image-wrapper .selected_image {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	height: 100%;
+	width: 100%;
+}
+.zoom-image-modal .ant-modal-content .ant-modal-body {
+	padding: 0px;
+}
+.green-btn.ant-btn-primary[disabled] {
+	opacity: 0.7;
+}
+.verification-confirm-modal .green-btn,
+.verification-form .green-btn,
+.content-wrapper .green-btn {
+	background-color: #288500 !important;
+	color: #ffffff !important;
+}
+.ant-upload-list {
+	color: #ffffff;
+}
+.verification-form .ant-input,
+.verification-form
+	.ant-select-single:not(.ant-select-customize-input)
+	.ant-select-selector {
+	background-color: var(--admin_panel_input);
+	color: #ffffff;
+}
+.verification-form .ant-upload-text-icon path {
+	fill: #ffffff;
+}
+
+.data-display-wrapper .verification_img {
+	width: 100px;
+	height: 70px;
+}
+.data-display-wrapper .verification_block {
+	width: 11rem;
+}
+.data-display-wrapper .verification_img {
+	cursor: default;
+}
+
+.verification_data_container .verification-icon {
+	width: 2rem;
+}
+.verification_data_container .files-search-icon {
+	font-size: 4rem;
+}
+.verification_data_container .rejected-text {
+	color: #ff4d4f;
+}
+.verification_data_container .pending-text {
+	color: #f28041;
+}
+.verification_data_container .approved-text {
+	color: #00a130;
+}
+.verification_data_container .edit-text {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.id_data_form {
+	color: #ffffff;
+}
+.id_data_form .ant-select-arrow svg {
+	fill: #ffffff;
+}
+.id_data_form .green-btn {
+	background-color: #288500 !important;
+	color: #ffffff !important;
+	width: 100%;
+}
+.verification-confirm-modal .title {
+	font-size: 18px;
+	font-weight: bold;
+}

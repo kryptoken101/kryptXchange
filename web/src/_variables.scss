@@ -1,0 +1,442 @@
+@import '_customVariables.css';
+
+$bp-xs: 575px;
+$bp-sm: 767px;
+$bp-md: 991px;
+$bp-lg: 1199px;
+
+// common colors
+$colors-main-black: var(--labels_important-active-labels-text-graphics);
+$colors-black: var(--labels_secondary-inactive-label-text-graphics);
+$colors-border: var(--calculated_secondary-border);
+$colors-border-hover: var(--calculated_secondary-border-1);
+$colors-main-border: var(--calculated_important-border);
+$footer-border-color: var(--calculated_footer_border);
+$colors-super-pale-black: var(--calculated_super-pale_label-text-graphics);
+
+// common colors for deactivate and disabled look
+$colors-deactivate: var(--labels_secondary-inactive-label-text-graphics);
+$colors-deactivate-color1: var(--labels_inactive-button);
+$colors-deactivate-color2: var(--labels_secondary-inactive-label-text-graphics);
+$colors-deactivate-color4: var(--labels_inactive-button);
+
+//common colors for notifications and errors
+$colors-notifications-red: var(--specials_notifications-alerts-warnings);
+$colors-notification-inactive-red: var(
+	--calculated_specials_notifications-alerts-inactive
+);
+$colors-notification-alert-text: var(
+	--calculated_specials_notifications-alerts-text
+);
+$colors-notifications-blue: var(--specials_buttons-links-and-highlights);
+$colors-notifications-green: var(--specials_checks-okay-done);
+$colors-notification-pending-text: var(
+	--calculated_specials_notifications-pending-text
+);
+$colors-notification-green-text: var(
+	--calculated_specials_notifications-success-text
+);
+$colors-notification-pending: var(--specials_pending-waiting-caution);
+$specials_highlight-box: var(--calculated_specials_highlight-box);
+$chat-own-message--color: var(--specials_my-username-in-chat);
+$favourite-star: var(--specials_my-username-in-chat);
+
+$colors-notifications-blue-disabled: var(
+	--calculated_notifications-blue-disabled
+);
+$colors-notification-pending-disabled: var(
+	--calculated_notification-pending-disabled
+);
+
+//common colors for terms
+$colors-terms-background: $specials_highlight-box;
+
+// theme colors
+$app-background-color: var(--base_background);
+$app-background-overlay: var(--calculated_background-overlay);
+$app-light-background: var(--base_secondary-navigation-bar);
+$app-sidebar-background: var(--base_wallet-sidebar-and-popup);
+$auth-container-background: var(--base_wallet-sidebar-and-popup);
+$landing_markets_table: var(--calculated_landing_markets_table);
+$market-card_gradient_background: var(
+	--calculated_market-card_gradient_background
+);
+$trade-block_highlight: var(--calculated_trade-block_highlight);
+$stake-table-highlight: var(--calculated_stake-table_highlight);
+$tag_background: var(--calculated_tag-background);
+
+// common colors for app bar
+$dark-app-bar-add-tab-menu-background: $app-background-color;
+$app-bar-menu-list-color: var(--labels_secondary-inactive-label-text-graphics);
+$app-bar-icon-inactive: var(--calculated_base_top-bar-navigation_text-inactive);
+
+// Quick trade
+$quick-trade-background: $app-background-color;
+$quick-trade-container: var(--base_wallet-sidebar-and-popup);
+$quick-trade-block-background: var(--calculated_quick_trade-bg);
+$quick-trade-block-gradient-top: var(--specials_quick-trade-gradient);
+$quick-trade-block-gradient-bottom: var(--calculated_quick_trade-gradient);
+
+$app-modal-background: var(--calculated_base_modal-overlay);
+$app-bar-background-color: var(--base_top-bar-navigation);
+$app-landing_background: var(--calculated_landing_background);
+
+$app-line-divider: $colors-main-border;
+$box-fields: var(--labels_fields);
+
+$buy: var(--trading_buying-related-elements);
+$sell: var(--trading_selling-related-elements);
+
+$pale-buy: var(--calculated_public-sale_buying-zeros);
+$pale-sell: var(--calculated_public-sale_selling-zeros);
+
+$link: var(--specials_buttons-links-and-highlights);
+
+$trade-fields: var(--labels_fields);
+$trade-fields-border: $colors-border;
+$trade-fill-indicator: $specials_highlight-box;
+$trade-fill-indicator-text: var(
+	--labels_secondary-inactive-label-text-graphics
+);
+
+$sparkline-fill: var(--calculated_trading_buying-sparkline-fill);
+$negative-sparkline-fill: var(--calculated_trading_selling-sparkline-fill);
+$selling-orderbook-bar: var(--calculated_trading_selling-orderbook-bar);
+$buying-orderbook-bar: var(--calculated_trading_buying-orderbook-bar);
+$selling-orderbook-best-bar: var(
+	--calculated_trading_selling-orderbook-best-bar
+);
+$buying-orderbook-best-bar: var(--calculated_trading_buying-orderbook-best-bar);
+$selling-orderbook-hover: var(--calculated_trading_selling-orderbook-hover);
+$buying-orderbook-hover: var(--calculated_trading_buying-orderbook-hover);
+$orderbook-text: var(--calculated_trading-orderbook-text);
+$orderbook-secondary-text: var(--calculated_trading-orderbook-secondary-text);
+$buy-bids-text: var(--calculated_trading_buying-related-text);
+$sell-bids-text: var(--calculated_trading_selling-related-text);
+$base_top-bar-navigation_text: var(--calculated_base_top-bar-navigation_text);
+$base_top-bar-navigation_text-inactive: var(
+	--calculated_base_top-bar-navigation_text-inactive
+);
+$base_footer_text: var(--calculated_base_footer_text);
+
+$selling-subtracted-bg: var(--calculated_trading_selling-subtracted-bg);
+$selling-added-bg: var(--calculated_trading_selling-added-bg);
+$buying-subtracted-bg: var(--calculated_trading_buying-subtracted-bg);
+$buying-added-bg: var(--calculated_trading_buying-added-bg);
+$selling-subtracted-best: var(--calculated_trading_selling-best-subtracted);
+$buying-subtracted-best: var(--calculated_trading_buying-best-subtracted);
+
+// form field colors
+$form-color-underline-focus: var(
+	--labels_important-active-labels-text-graphics
+);
+$form-color-underline: var(--labels_secondary-inactive-label-text-graphics);
+$form-color-placeholder: var(--labels_secondary-inactive-label-text-graphics);
+$form-arrow: var(--labels_important-active-labels-text-graphics);
+$form-label: var(--labels_important-active-labels-text-graphics);
+
+// theme tabs
+$tab-active: var(--labels_important-active-labels-text-graphics);
+$tab-inactive: var(--labels_secondary-inactive-label-text-graphics);
+$sidebar-color: var(--labels_secondary-inactive-label-text-graphics);
+$sidebar-color-active: var(--labels_important-active-labels-text-graphics);
+$info-panel-background: var(--labels_fields);
+$info-panel-text: var(--labels_secondary-inactive-label-text-graphics);
+$icon-hover: var(--labels_important-active-labels-text-graphics);
+$icon-unhover: var(--labels_secondary-inactive-label-text-graphics);
+$trade-tabs-inactive-color: var(
+	--labels_secondary-inactive-label-text-graphics
+);
+
+// theme footer
+$footer-background-color: var(--base_footer);
+
+// chat color
+$chat-message-background-even: var(--base_background);
+$chat-message-background-odd: var(--base_secondary-navigation-bar);
+$chat-message-color: var(--specials_chat-messages);
+$chat-box-border: $colors-main-border;
+
+// this is for transaction history- ToDo: need to customize for common theme
+$history-color-buy: var(--trading_buying-related-elements);
+$history-color-sell: var(--trading_selling-related-elements);
+
+// remaining dark colors
+$dark-app-background-color: var(--base_background);
+$dark-app-line-divider: $colors-super-pale-black;
+$dark-border-main: $colors-main-border;
+$dark-inactive-color: var(--labels_secondary-inactive-label-text-graphics);
+$dark-font-sub-text-color: var(--labels_secondary-inactive-label-text-graphics);
+$dark-font-sub-text-1-color: var(
+	--labels_secondary-inactive-label-text-graphics
+);
+$dark-accordion-arrow-active: var(--dark-accordion-arrow-active);
+
+// coins for white theme
+// fiat coins
+$coin-eur: var(--coin-eur);
+$coin-eur-1: var(--coin-eur);
+$coin-eur-text: var(--coin-eur-text);
+$coin-usd: var(--coin-usd);
+$coin-usd-1: var(--coin-usd);
+$coin-usd-text: var(--coin-usd-text);
+$coin-jpy: var(--coin-jpy);
+$coin-jpy-1: var(--coin-jpy);
+$coin-jpy-text: var(--coin-jpy-text);
+$coin-gbp: var(--coin-gbp);
+$coin-gbp-1: var(--coin-gbp);
+$coin-gbp-text: var(--coin-gbp-text);
+$coin-chf: var(--coin-chf);
+$coin-chf-1: var(--coin-chf);
+$coin-chf-text: var(--coin-chf-text);
+$coin-cad: var(--coin-cad);
+$coin-cad-1: var(--coin-cad);
+$coin-cad-text: var(--coin-cad-text);
+$coin-aud: var(--coin-aud);
+$coin-aud-1: var(--coin-aud);
+$coin-aud-text: var(--coin-aud-text);
+$coin-nzd: var(--coin-nzd);
+$coin-nzd-1: var(--coin-nzd);
+$coin-nzd-text: var(--coin-nzd-text);
+$coin-zar: var(--coin-zar);
+$coin-zar-1: var(--coin-zar);
+$coin-zar-text: var(--coin-zar-text);
+$coin-hkd: var(--coin-hkd);
+$coin-hkd-1: var(--coin-hkd);
+$coin-hkd-text: var(--coin-hkd-text);
+$coin-krw: var(--coin-krw);
+$coin-krw-1: var(--coin-krw);
+$coin-krw-text: var(--coin-krw-text);
+$coin-cny: var(--coin-cny);
+$coin-cny-1: var(--coin-cny);
+$coin-cny-text: var(--coin-cny-text);
+$coin-sgd: var(--coin-sgd);
+$coin-sgd-1: var(--coin-sgd);
+$coin-sgd-text: var(--coin-sgd-text);
+// crypto coins
+$coin-btc: var(--coin-btc);
+$coin-btc-1: var(--coin-btc);
+$coin-btc-text: var(--coin-btc-text);
+$coin-eth: var(--coin-eth);
+$coin-eth-1: var(--coin-eth);
+$coin-eth-text: var(--coin-eth-text);
+$coin-ltc: var(--coin-ltc);
+$coin-ltc-1: var(--coin-ltc);
+$coin-ltc-text: var(--coin-ltc-text);
+$coin-bch: var(--coin-bch);
+$coin-bch-1: var(--coin-bch);
+$coin-bch-text: var(--coin-bch-text);
+$coin-xrp: var(--coin-xrp);
+$coin-xrp-1: var(--coin-xrp);
+$coin-xrp-text: var(--coin-xrp-text);
+$coin-xht: var(--coin-xht);
+$coin-xht-1: var(--coin-xht);
+$coin-xht-text: var(--coin-xht-text);
+$coin-eos: var(--coin-eos);
+$coin-eos-1: var(--coin-eos);
+$coin-eos-text: var(--coin-eos-text);
+$coin-bnb: var(--coin-bnb);
+$coin-bnb-1: var(--coin-bnb);
+$coin-bnb-text: var(--coin-bnb-text);
+$coin-link: var(--coin-link);
+$coin-link-1: var(--coin-link);
+$coin-link-text: var(--coin-link-text);
+$coin-trx: var(--coin-trx);
+$coin-trx-1: var(--coin-trx);
+$coin-trx-text: var(--coin-trx-text);
+$coin-ada: var(--coin-ada);
+$coin-ada-1: var(--coin-ada);
+$coin-ada-text: var(--coin-ada-text);
+$coin-matic: var(--coin-matic);
+$coin-matic-1: var(--coin-matic);
+$coin-matic-text: var(--coin-matic-text);
+$coin-neo: var(--coin-neo);
+$coin-neo-1: var(--coin-neo);
+$coin-neo-text: var(--coin-neo-text);
+$coin-etc: var(--coin-etc);
+$coin-etc-1: var(--coin-etc);
+$coin-etc-text: var(--coin-etc-text);
+$coin-xlm: var(--coin-xlm);
+$coin-xlm-1: var(--coin-xlm);
+$coin-xlm-text: var(--coin-xlm-text);
+$coin-xmr: var(--coin-xmr);
+$coin-xmr-1: var(--coin-xmr);
+$coin-xmr-text: var(--coin-xmr-text);
+$coin-zec: var(--coin-zec);
+$coin-zec-1: var(--coin-zec);
+$coin-zec-text: var(--coin-zec-text);
+$coin-one: var(--coin-one);
+$coin-one-1: var(--coin-one);
+$coin-one-text: var(--coin-one-text);
+$coin-pax: var(--coin-pax);
+$coin-pax-1: var(--coin-pax);
+$coin-pax-text: var(--coin-pax-text);
+$coin-usdc: var(--coin-usdc);
+$coin-usdc-1: var(--coin-usdc);
+$coin-usdc-text: var(--coin-usdc-text);
+$coin-usdt: var(--coin-usdt);
+$coin-usdt-1: var(--coin-usdt);
+$coin-usdt-text: var(--coin-usdt-text);
+$coin-vet: var(--coin-vet);
+$coin-vet-1: var(--coin-vet);
+$coin-vet-text: var(--coin-vet-text);
+$coin-btt: var(--coin-btt);
+$coin-btt-1: var(--coin-btt);
+$coin-btt-text: var(--coin-btt-text);
+$coin-qtum: var(--coin-qtum);
+$coin-qtum-1: var(--coin-qtum);
+$coin-qtum-text: var(--coin-qtum-text);
+$coin-algo: var(--coin-algo);
+$coin-algo-1: var(--coin-algo);
+$coin-algo-text: var(--coin-algo-text);
+$coin-rvn: var(--coin-rvn);
+$coin-rvn-1: var(--coin-rvn);
+$coin-rvn-text: var(--coin-rvn-text);
+$coin-iota: var(--coin-iota);
+$coin-iota-1: var(--coin-iota);
+$coin-iota-text: var(--coin-iota-text);
+$coin-dash: var(--coin-dash);
+$coin-dash-1: var(--coin-dash);
+$coin-dash-text: var(--coin-dash-text);
+$coin-bsv: var(--coin-bsv);
+$coin-bsv-1: var(--coin-bsv);
+$coin-bsv-text: var(--coin-bsv-text);
+$coin-ont: var(--coin-ont);
+$coin-ont-1: var(--coin-ont);
+$coin-ont-text: var(--coin-ont-text);
+$coin-atom: var(--coin-atom);
+$coin-atom-1: var(--coin-atom);
+$coin-atom-text: var(--coin-atom-text);
+$coin-celr: var(--coin-celr);
+$coin-celr-1: var(--coin-celr);
+$coin-celr-text: var(--coin-celr-text);
+$coin-omg: var(--coin-omg);
+$coin-omg-1: var(--coin-omg);
+$coin-omg-text: var(--coin-omg-text);
+$coin-hot: var(--coin-hot);
+$coin-hot-1: var(--coin-hot);
+$coin-hot-text: var(--coin-hot-text);
+$coin-tusd: var(--coin-tusd);
+$coin-tusd-1: var(--coin-tusd);
+$coin-tusd-text: var(--coin-tusd-text);
+$coin-dai: var(--coin-dai);
+$coin-dai-1: var(--coin-dai);
+$coin-dai-text: var(--coin-dai-text);
+$coin-ama: var(--coin-ama);
+$coin-ama-1: var(--coin-ama);
+$coin-ama-text: var(--coin-ama-text);
+$coin-xtz: var(--coin-xtz);
+$coin-xtz-1: var(--coin-xtz);
+$coin-xtz-text: var(--coin-xtz-text);
+$coin-doge: var(--coin-doge);
+$coin-doge-1: var(--coin-doge);
+$coin-doge-text: var(--coin-doge-text);
+$coin-uni: var(--coin-uni);
+$coin-uni-1: var(--coin-uni);
+$coin-uni-text: var(--coin-uni-text);
+$coin-dot: var(--coin-dot);
+$coin-dot-1: var(--coin-dot);
+$coin-dot-text: var(--coin-dot-text);
+
+$content-display-width: 100rem;
+$app-content-display-width: 75rem;
+$content-display-vertical-margin: 1rem;
+$background-patter--size: 30rem;
+
+$font-size-headline: 4rem;
+$font-size-headline2: 3.5rem;
+$font-size-subhead1: 2.6rem;
+$font-size-subhead2: 1.8rem;
+$font-size-subhead3: 1.3rem;
+$font-size-subhead4: 1.2rem;
+$font-size-main: 1.1rem;
+$font-size-subtext: 1rem;
+$font-size-mobile-title: 15px;
+$font-size-mobile-txt: 13px;
+$font-size-mobile-innertxt: 11px;
+$font-size-small-expandable: 0.84rem;
+
+$form-width-max: $content-display-width / 2;
+
+$en--font-family: 'Open Sans';
+$raleway--font-family: 'Raleway';
+$raleway-extrabold--font-family: 'Raleway Extrabold';
+$raleway-medium--font-family: 'Raleway Medium';
+$raleway-light--font-family: 'Raleway Light';
+$title--font-family: $raleway-extrabold--font-family;
+
+// DIALOG
+$dialog-min-width: 25rem;
+$dialog-min-height: 30rem;
+
+// APP BAR
+$navigation_bar-height: 36px;
+$navigation_bar-height-lg: 45px;
+$navigation_bar-action_button: 7.5rem;
+$navigation_bar-font_size: $font-size-subtext;
+
+// APP SECONDARY BAR
+$navigation_bar_secondary-height: 32px;
+
+// FOOTER
+$footer-height: 64px;
+
+// SIDEBAR
+$sidebar-width: 20rem;
+$sidebar-width-lg: 25rem;
+$sidebar-width-md: 18rem;
+$sidebar-sections-padding: 1rem;
+
+$sidebar-borderbottom-color: $colors-deactivate-color2;
+$sidebar-borderbottom-color-active: $colors-deactivate-color2;
+$sidebar-borderbottom-height: 4px;
+
+$currency-color: inherit;
+
+// TAB CONTROLLER
+
+$tab-border-color: $colors-main-black;
+$tab-text-padding: 0 8px 8px;
+$tab-selected-line-height: 4px;
+
+// MOBILE
+$market-selector--height: 3rem;
+$navigation_bar-mobile--height: 4rem;
+$navigation_bar-mobile--background: $app-bar-background-color;
+$bottom_bar--height: 6rem;
+$bottom-bar--background: $navigation_bar-mobile--background;
+$max-content-height-mobile: calc(
+	100vh - #{$navigation_bar-mobile--height + $bottom-bar--height}
+);
+$max-content-height-double-bar-mobile: calc(
+	100vh - #{$navigation_bar-mobile--height * 2 + $bottom-bar--height +
+		$market-selector--height}
+);
+$max-content-height-home-mobile: calc(
+	100vh - #{$navigation_bar-mobile--height}
+);
+$max-content-height-dialog-mobile: calc(
+	100vh - #{$navigation_bar-mobile--height * 2}
+);
+
+$market-menu-height-dialog-mobile: calc(
+	100vh - 19rem - #{$navigation_bar-mobile--height * 2}
+);
+
+$max-content-width-mobile: 100vw;
+$table-header-column--font-size: 1rem;
+$regular--font-size: 1.2rem;
+$regular-chat--font-size: 1.5rem;
+$title--font-size: 1.75rem;
+$extra-thick--font-size: 1.5rem;
+$component--margin-bottom: 3rem;
+$input--height: 4.5rem;
+
+// CONTAINERS
+$max-content-height: calc(100vh - #{$navigation_bar-height});
+$max-content-secondary-height: calc(100vh - #{$navigation_bar-height * 2});
+$max-content-height-lg: calc(100vh - #{$navigation_bar-height-lg});
+$max-content-secondary-height-lg: calc(
+	100vh - #{$navigation_bar-height-lg * 2}
+);
+$max-width-content: 50rem;

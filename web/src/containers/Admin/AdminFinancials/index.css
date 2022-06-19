@@ -1,0 +1,502 @@
+.admin-earnings-container .tab-contents {
+	margin-top: 4rem;
+}
+.admin-earnings-container .icon-holder {
+	width: 5rem;
+	margin: 10px 0;
+	height: 4rem;
+	position: relative;
+}
+.admin-earnings-container .description-width {
+	width: 58rem;
+}
+.admin-earnings-container .cloudIcon {
+	width: 5rem;
+	height: 5rem;
+}
+.settle-modal-page .margin-top-bottom {
+	margin: 15px 0;
+}
+.settle-modal-page .heading {
+	font-size: 22px;
+	font-weight: bold;
+}
+.settle-modal-page .dollar-icon {
+	background-color: #008a00;
+	width: 24px;
+	color: white;
+	border-radius: 50%;
+	font-size: 16px;
+	font-weight: bold;
+	margin-right: 5px;
+}
+.settle-modal-page .modal-content {
+	border: 1px solid white;
+	background-color: inherit;
+	color: inherit;
+	margin: 20px 0 20px 10px;
+	padding: 0 0 15px 15px;
+}
+.settle-modal-page .modal-content .legend {
+	position: relative;
+	bottom: 13px;
+	left: 3px;
+	background-color: var(--admin_panel_modal_background);
+	width: 16rem;
+}
+.settle-modal-page .modal-button {
+	width: 18rem;
+	background-color: #288500;
+	color: white;
+	font-weight: bold;
+	margin: 5px;
+}
+.settle-modal-page .modal-content .title-content {
+	font-size: 16px;
+}
+.admin-earnings-container .dollar-icon {
+	background-color: #008a00;
+	width: 24px;
+	position: absolute;
+	top: 0px;
+	color: white;
+	border-radius: 50%;
+	left: 3.5rem;
+	font-size: 16px;
+	font-weight: bold;
+}
+.admin-earnings-container .button {
+	width: 12rem;
+	background-color: #288500;
+	color: white;
+	font-weight: bold;
+}
+
+.terminating-tooltip .ant-tooltip-inner {
+	background-color: blue;
+	border: 1px solid black;
+	color: white;
+	padding: 12px;
+}
+
+.admin-earnings-container .icon-wrapper {
+	width: 12rem;
+}
+.admin-earnings-container .content-wrapper .w-100 {
+	width: 100%;
+}
+.admin-earnings-container .content-wrapper .ant-tabs {
+	color: var(--admin_panel_main_font);
+}
+.admin-earnings-container .ant-tabs-nav .ant-tabs-ink-bar {
+	height: 6px;
+	background-color: #ffffff;
+}
+.admin-earnings-container .ant-tabs-nav .ant-tabs-ink-bar {
+	top: 0px;
+}
+.admin-earnings-container .ant-tabs-tab .ant-tabs-tab-btn {
+	opacity: 0.6;
+}
+.admin-earnings-container .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+	font-weight: bold;
+	opacity: 1;
+}
+.admin-earnings-container .ant-tabs-nav .ant-tabs-tab {
+	font-size: 15px;
+	color: var(--admin_panel_main_font);
+	font-weight: bold;
+}
+.admin-earnings-container .ant-tabs-nav .ant-tabs-tab:hover {
+	color: var(--admin_panel_main_font);
+}
+.admin-earnings-container .ant-tabs-nav::before {
+	border-bottom: none;
+}
+.admin-earnings-container .title {
+	font-size: 22px;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+}
+.admin-earnings-container .table-container {
+	margin-top: 2rem;
+}
+.admin-earnings-container .title-wrapper {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+}
+.admin-earnings-container .download-btn {
+	width: 100px;
+	font-weight: bold;
+	background-color: #202980;
+	color: var(--admin_panel_main_font);
+	border-color: #ffffff;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.admin-earnings-container .id-wrapper {
+	background-color: #288500;
+	width: 35px;
+	height: 25px;
+	padding: 4px;
+	font-size: 12px;
+	color: #fff;
+}
+
+.admin-earnings-container .ant-table-thead > tr > th {
+	background-color: var(--admin_panel_table_thead);
+	color: var(--admin_panel_main_font);
+	padding: 0rem 1rem;
+}
+.admin-earnings-container .ant-table-tbody > tr > td {
+	background-color: var(--admin_panel_table_tbody);
+	color: var(--admin_panel_main_font);
+	border-bottom: 1px solid var(--admin_panel_table_tbody);
+}
+.admin-earnings-container
+	.ant-table-tbody
+	> tr.ant-table-placeholder:hover
+	> td {
+	background-color: var(--admin_panel_table_tbody_hover);
+}
+.admin-earnings-container .ant-table-tbody > tr.ant-table-row:hover > td {
+	background-color: var(--admin_panel_table_tbody_hover);
+}
+.admin-earnings-container
+	.ant-empty
+	.ant-empty-image
+	.ant-empty-img-simple-ellipse,
+.admin-earnings-container
+	.ant-empty
+	.ant-empty-image
+	.ant-empty-img-simple-path {
+	fill: #7d9ac9;
+}
+.admin-earnings-container .ant-empty .ant-empty-image .ant-empty-img-simple-g {
+	stroke: #7d9ac9;
+}
+.admin-earnings-container .ant-empty .ant-empty-description {
+	color: var(--admin_panel_main_font);
+}
+.admin-earnings-container .ant-table-pagination.ant-pagination {
+	margin: 16px 0;
+	background: #ffffff;
+	border-radius: 50px;
+	padding: 15px;
+}
+.transfer-confirmation-popup {
+	padding: 1rem;
+}
+.transfer-confirmation-popup .confirm-container {
+	border: 1px solid #ffffff;
+	padding: 1.5rem;
+}
+.transfer-confirmation-popup .legend {
+	background-color: #0000ff;
+	left: 1rem;
+	top: 12px;
+	padding: 5px;
+	position: relative;
+}
+.admin-earnings-container .fields-container {
+	display: flex;
+	margin-top: 10px;
+}
+.admin-earnings-container .ant-picker {
+	background-color: var(--admin_panel_input);
+}
+.admin-earnings-container .ant-picker input {
+	color: white;
+}
+.admin-earnings-container .ant-select-arrow {
+	color: white;
+}
+.admin-earnings-container .ant-picker .anticon-swap-right {
+	color: white;
+}
+.admin-earnings-container .ant-picker .anticon-calendar {
+	color: white;
+}
+
+.admin-asset-wrapper .main-header {
+	color: #ffffff;
+	font-size: 38px;
+	font-weight: bold;
+	padding-left: 2rem;
+	border-bottom: 1px solid #ffffff;
+}
+.admin-asset-wrapper .filter-header {
+	display: flex;
+	justify-content: space-between;
+	padding: 0rem 1rem;
+	margin-bottom: 1rem;
+}
+.admin-asset-wrapper .coin-symbol-wrapper {
+	display: flex;
+	align-items: center;
+}
+.admin-asset-wrapper .coin-symbol-wrapper .coin-wrap {
+	margin-right: 5px;
+}
+.admin-asset-wrapper .coin-symbol-wrapper .config-content {
+	display: flex;
+	align-items: center;
+	margin-left: 5px;
+}
+.admin-asset-wrapper .coin-symbol-wrapper:hover {
+	cursor: pointer;
+}
+.admin-asset-wrapper .coin-symbol-wrapper:hover .currency_ball .fullName {
+	text-decoration: underline;
+}
+.coin-symbol-wrapper .currency_ball {
+	display: flex;
+	align-items: center;
+}
+.coin-symbol-wrapper .currency_ball .fullName {
+	margin-left: 10px;
+}
+.admin-asset-wrapper .balance-column {
+	width: 18rem;
+}
+.admin-asset-wrapper .link {
+	color: #0000ff;
+	cursor: pointer;
+	text-decoration: underline;
+}
+.admin-asset-wrapper .title {
+	color: #ffffff;
+	font-size: 24px;
+	font-weight: bold;
+}
+.admin-asset-wrapper .sub-title {
+	color: #ffffff;
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+.admin-asset-wrapper .preview-container {
+	width: 30rem;
+}
+.admin-asset-wrapper .preview-container .preview-detail-container {
+	width: 100%;
+}
+.admin-asset-wrapper .preview-coin-container {
+	display: flex;
+	margin: 2rem 0rem;
+}
+.admin-asset-wrapper .preview-coin-container .preview-content {
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+.admin-asset-wrapper
+	.preview-coin-container
+	.preview-content
+	.currency_ball-wrapper {
+	width: 80px !important;
+	height: 80px !important;
+}
+.admin-asset-wrapper .preview-coin-container .preview-content .line {
+	position: absolute;
+	border-top: 1px solid #000;
+	width: 35px;
+	top: 12px;
+	margin-left: 3px;
+}
+.admin-asset-wrapper .preview-coin-container .preview-content .icon-preview {
+	width: 94px;
+	height: 94px;
+}
+.admin-asset-wrapper .preview-symbol-tip {
+	position: relative;
+	left: 35px;
+	bottom: 22px;
+}
+.admin-asset-wrapper .preview-symbol-tip .line {
+	position: absolute;
+	border-top: 1px solid #000;
+	width: 50px;
+	top: 12px;
+	right: 50px;
+	margin-right: 3px;
+}
+.admin-asset-wrapper .preview-name-tip {
+	position: relative;
+	top: 8px;
+	right: 8px;
+}
+.admin-asset-wrapper .preview-name-tip .line {
+	position: absolute;
+	border-top: 1px solid #000;
+	width: 60px;
+	top: 12px;
+	right: 40px;
+	margin-right: 3px;
+}
+.admin-asset-wrapper .preview-icon-tip {
+	position: relative;
+	left: 30px;
+}
+.admin-asset-wrapper .preview-icon-tip .line {
+	position: absolute;
+	border-top: 1px solid #000;
+	width: 35px;
+	top: 12px;
+	right: 30px;
+	margin-right: 3px;
+}
+.admin-asset-wrapper .new-asset-icon {
+	width: 3rem;
+}
+.admin-asset-wrapper .preview-detail-container {
+	border-top: 1px solid #a1a1a1;
+	color: #ffffff;
+	padding: 1rem;
+	width: 65%;
+}
+.admin-asset-wrapper .type-wrap .warning-container {
+	position: relative;
+	display: flex;
+}
+.admin-asset-wrapper .type-wrap .warning {
+	position: absolute;
+	left: 100%;
+	bottom: 0px;
+}
+.admin-asset-wrapper .overview-wrap {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1rem;
+}
+.admin-asset-wrapper .overview-wrap .configure-btn {
+	font-size: 32px;
+	height: auto;
+}
+.admin-asset-wrapper .overview-wrap .preview-container .preview-content {
+	flex-direction: column;
+}
+.admin-asset-wrapper
+	.overview-wrap
+	.preview-container
+	.preview-content
+	.edit-content {
+	margin-top: 0.25rem;
+	color: #ffffff;
+}
+.admin-asset-wrapper
+	.overview-wrap
+	.preview-container
+	.preview-content
+	.description-small {
+	font-size: 10px;
+	margin-top: 0.25rem;
+	text-align: center;
+	width: 70%;
+}
+.admin-asset-wrapper
+	.overview-wrap
+	.preview-container
+	.preview-content
+	.remove {
+	color: #ff4d4f;
+	text-align: left;
+	width: 60%;
+}
+.admin-asset-wrapper .overview-wrap .preview-container .ant-breadcrumb {
+	margin: 1rem 0rem;
+}
+.admin-asset-wrapper
+	.overview-wrap
+	.preview-container
+	.ant-breadcrumb
+	.ant-breadcrumb-link,
+.admin-asset-wrapper
+	.overview-wrap
+	.preview-container
+	.ant-breadcrumb
+	.ant-breadcrumb-separator {
+	color: #ffffff;
+	opacity: 0.6;
+}
+.admin-asset-wrapper .overview-wrap .preview-container .breadcrumb_active,
+.admin-asset-wrapper
+	.overview-wrap
+	.preview-container
+	.ant-breadcrumb
+	.ant-breadcrumb-link:hover {
+	color: #ffffff;
+	cursor: pointer;
+	opacity: 1;
+}
+.admin-asset-wrapper .overview-wrap .file-container {
+	border-radius: 4px;
+	display: block;
+	padding: 0.25rem;
+	white-space: nowrap;
+	position: relative;
+	width: 105px;
+}
+.admin-asset-wrapper .overview-wrap .file-container label {
+	display: block;
+	padding-bottom: 0;
+	box-sizing: border-box;
+}
+.overview-wrap .file-container label .anchor {
+	color: #0000ff;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.admin-asset-wrapper .overview-wrap .file-container .ant-form-item-control {
+	line-height: 1;
+}
+.admin-asset-wrapper .overview-wrap .file-container input {
+	opacity: 0;
+	position: fixed;
+	left: -999px;
+}
+.admin-asset-wrapper .overview-wrap .icon-upload .file-container {
+	border: 0px;
+	width: 105px;
+	height: 100%;
+}
+.admin-asset-wrapper .overview-wrap .icon-upload .file-container label {
+	cursor: pointer;
+}
+.admin-asset-wrapper .overview-wrap .icon-upload .file-container .upload-box {
+	background-color: #288500 !important;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 6px;
+	text-align: center;
+}
+.admin-asset-wrapper .table-wrapper tr {
+	height: 4rem;
+}
+.admin-asset-wrapper .btn-wrapper {
+	display: flex;
+	align-items: center;
+	margin-top: 1rem;
+}
+.admin-asset-wrapper .btn-wrapper .separator {
+	margin-left: 1rem;
+}
+.admin-asset-wrapper .btn-wrapper .apply-btn {
+	width: 100%;
+}
+.settle-modal-page .btn-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.settle-modal-page .btn-wrapper .ant-btn.ant-btn-primary {
+	background-color: #288500;
+	width: 45%;
+}
+.settle-modal-page .anticon.anticon-loading svg {
+	fill: #ffffff;
+	font-size: larger;
+}

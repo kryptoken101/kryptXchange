@@ -1,0 +1,170 @@
+$row--border-color: $colors-border;
+$row--border: 1px solid $row--border-color;
+
+$table-cell_box-background: grey;
+$table--margin: 2rem;
+$controllers--color-active: $colors-notifications-blue;
+$controllers--color-disabled: $colors-deactivate-color2;
+
+.table-wrapper {
+	width: 100%;
+	margin: $table--margin 0 $table--margin;
+
+	tr {
+		height: 2rem;
+	}
+
+	th,
+	td {
+		padding: 0.25rem;
+	}
+
+	th {
+		font-weight: bold;
+	}
+
+	.border-bottom {
+		border-bottom: 1px solid $colors-border;
+	}
+
+	.table_header-wrapper {
+		color: $colors-black;
+		.action_notification-text {
+			white-space: nowrap;
+		}
+	}
+
+	.table_body-wrapper {
+		font-size: $font-size-subtext;
+
+		&.with_icon tr td:first-child {
+			border: none !important;
+		}
+
+		tr.table_body-row {
+			border-top: $row--border;
+			border-bottom: $row--border;
+		}
+		.cancel-row-color {
+			@extend .cancel-animate;
+			.cell_box-type {
+				.sell,
+				.buy {
+					@extend .cancel-animate;
+				}
+			}
+			.action_notification-wrapper .notification-info {
+				@extend .cancel-animate;
+			}
+			.cell-wrapper {
+				@extend .cancel-animate;
+				.cell_value-wrapper {
+					@extend .cancel-animate;
+					.cell_value-bar {
+						@extend .cancel-animate;
+					}
+				}
+			}
+		}
+
+		.cancel-animate {
+			-webkit-animation: cancelRow 1.4s;
+			-moz-animation: cancelRow 1.4s;
+			-o-animation: cancelRow 1.4s;
+			animation: cancelRow 1.4s;
+		}
+
+		@-webkit-keyframes cancelRow {
+			from {
+			}
+			to {
+				color: $app-background-color;
+				background-color: $app-background-color;
+				border-color: $app-background-color;
+			}
+		}
+		@-moz-keyframes cancelRow {
+			from {
+			}
+			to {
+				color: $app-background-color;
+				background-color: $app-background-color;
+				border-color: $app-background-color;
+			}
+		}
+		@keyframes cancelRow {
+			from {
+			}
+			to {
+				color: $app-background-color;
+				background-color: $app-background-color;
+				border-color: $app-background-color;
+			}
+		}
+	}
+
+	.cell_box-type {
+		color: $buy-bids-text;
+		text-transform: capitalize;
+
+		> div {
+			padding: 0.15rem 0.25rem;
+		}
+	}
+}
+
+.layout-mobile {
+	.table_controllers-wrapper {
+		font-size: $regular--font-size;
+
+		.action_notification-wrapper {
+			.action_notification-svg {
+				svg {
+					height: 2rem;
+					width: 2rem;
+				}
+			}
+		}
+	}
+}
+
+.table_controllers-wrapper {
+	margin: 2rem 0;
+	color: $colors-main-black;
+	border-top: 2px solid $row--border-color;
+	position: relative;
+
+	.disabled {
+		cursor: default;
+		pointer-events: none;
+		.action_notification-wrapper {
+			.notification-info {
+				color: $colors-deactivate-color1;
+			}
+			.action_notification-svg {
+				.arrow-1 {
+					fill: $colors-deactivate-color1;
+				}
+			}
+		}
+	}
+}
+
+.direction_ltr {
+	.cell_box-type {
+		> div {
+			margin-right: 0.5rem;
+		}
+	}
+	.table_header-wrapper {
+		font-family: $title--font-family;
+	}
+}
+
+.direction_rtl {
+	.cell_box-type {
+		> div {
+			margin-left: 0.5rem;
+		}
+	}
+}

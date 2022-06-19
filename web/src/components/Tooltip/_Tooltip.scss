@@ -1,0 +1,27 @@
+@mixin holla-tooltip(
+	$background-color,
+	$border-color,
+	$font-color: $border-color
+) {
+	&.holla-tooltip {
+		opacity: 1 !important;
+		background-color: transparent !important;
+
+		.rc-tooltip-inner {
+			color: $font-color !important;
+			background-color: $background-color;
+			border-color: $border-color !important;
+		}
+		&.rc-tooltip-placement-bottom,
+		&.rc-tooltip-placement-bottomLeft,
+		&.rc-tooltip-placement-bottomRight {
+			.rc-tooltip-arrow {
+				border-bottom-color: $border-color !important;
+			}
+		}
+	}
+}
+
+.light-theme {
+	@include holla-tooltip($app-background-color, $colors-main-black);
+}

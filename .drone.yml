@@ -1,0 +1,199 @@
+kind: pipeline
+type: docker
+name: block_duplicated_pr_merged
+
+steps:
+- name: current_hollaex_kit_version
+  image: alpine
+  commands:
+  -  export PACKAGE_VERSION="$(cat version)" && echo "$PACKAGE_VERSION" > .tags_current
+  -  echo "Current Release tag is :" && cat .tags_current
+
+- name: previous_hollaex_kit_version
+  image: byrnedo/alpine-curl
+  commands:
+  -  curl https://raw.githubusercontent.com/bitholla/hollaex-kit/master/version > .tags_previous
+  -  echo "The previous master release tag is :" && cat .tags_previous
+
+- name: version_comparison
+  image: frolvlad/alpine-bash
+  commands:
+  -  export TAGS_CURRENT=$(cat .tags_current) && export TAGS_PREVIOUS=$(cat .tags_previous) && if [ "$TAGS_PREVIOUS" ==  "$TAGS_CURRENT" ]; then echo "Blocking the merge since the versions are same..." && exit 1; else echo "hi"; fi
+
+- name: slack_noti_job_end
+  image: plugins/slack
+  settings:
+    channel: deployment
+    webhook:
+      from_secret: slack_webhook
+  when:
+    status: [failure]
+  
+trigger:
+  branch: 
+    - master
+  event:
+    - pull_request
+
+---
+
+kind: pipeline
+type: docker
+name: slack_notify
+
+steps:
+- name: partymaker_version_tag_testnet
+  image: alpine
+  commands:
+  - cat version > .tags
+  - echo "Current version tag is :" && cat .tags
+  when:
+    branch: master
+
+- name: partymaker_version_tag
+  image: alpine
+  commands:
+  - echo "$(cat version)-testnet" > .tags
+  - echo "Current version tag is :" && cat .tags
+  when:
+    branch: testnet
+    
+- name: create_github_release
+  image: bitholla/devops-tools:drone_github_hub-2004241546
+  environment:
+    GITHUB_TOKEN:
+      from_secret: github_oauth2_token_for_releases
+  commands:
+    - apt-get update && apt-get install -y hub git
+    - hub release create -m "HollaEx Kit v$(cat .tags) Release" -t ${DRONE_BRANCH} $(cat .tags)
+  when:
+    branch: master
+  
+- name: slack_noti_to_releases
+  image: bitholla/devops-tools:drone_partymaker-0.1.4
+  environment:
+    WEBHOOK_URL:
+      from_secret: webhook_url
+  when:
+    status: [success]
+
+- name: notify_to_discord_releases
+  image: bitholla/devops-tools:drone_partymaker-0.1.5
+  channel: deployment
+  settings:
+    target: discord
+    release_name: hollaex-kit
+  environment:
+    WEBHOOK_URL:
+      from_secret: discord_webhook_url
+  when:
+    status: [ success, failure ]
+    branch: master
+
+trigger:
+  branch:
+  - master
+  - testnet
+  event:
+  - push
+
+---
+
+kind: pipeline
+type: docker
+name: kit_v2_sandbox_deployment
+
+steps:
+- name: slack_noti_job_start
+  image: plugins/slack
+  settings:
+    channel: deployment
+    webhook:
+      from_secret: slack_webhook
+    template: "<{{build.link}}|HollaEx v2 Sandbox Deployment> - #{{build.number}} started on <https://github.com/{{repo.owner}}/{{repo.name}}/tree/{{build.branch}}|{{repo.name}} / {{build.branch}}> by {{build.author}}"
+
+- name: partymaker_version_tag
+  image: alpine
+  commands:
+  - echo "$(cat version)-sandbox" > .tags
+  - echo "Current version tag is :" && cat .tags
+
+- name: request_hollacloud_to_run_upgrade
+  image: bitholla/devops-tools:drone_hollacloud-220216
+  environment:
+    HOLLAEX_EMAIL:
+      from_secret: hollaex_email
+    HOLLAEX_PASSWORD:
+      from_secret: hollaex_password
+    HOLLAEX_LOGIN_KEY:
+      from_secret: hollaex_network_testnet_login_key
+  settings:
+    exchange_id: 176
+    exchange_name: "Sandbox HollaEx"
+
+- name: slack_noti_job_end
+  image: plugins/slack
+  settings:
+    channel: deployment
+    webhook:
+      from_secret: slack_webhook
+  when:
+    status: [success, failure]
+
+trigger:
+  branch:
+  - testnet
+  event:
+  - push
+
+---
+
+kind: pipeline
+type: docker
+name: kit_v2_next_deployment
+
+steps:
+- name: slack_noti_job_start
+  image: plugins/slack
+  settings:
+    channel: deployment
+    webhook:
+      from_secret: slack_webhook
+    template: "<{{build.link}}|HollaEx v2 Next Test Exchange Deployment> - #{{build.number}} started on <https://github.com/{{repo.owner}}/{{repo.name}}/tree/{{build.branch}}|{{repo.name}} / {{build.branch}}> by {{build.author}}"
+
+- name: partymaker_version_tag
+  image: alpine
+  commands:
+  - echo "$(cat version)-next" > .tags
+  - echo "Current version tag is :" && cat .tags
+
+- name: request_hollacloud_to_run_upgrade
+  image: bitholla/devops-tools:drone_hollacloud-220216
+  environment:
+    HOLLAEX_EMAIL:
+      from_secret: next_email
+    HOLLAEX_PASSWORD:
+      from_secret: next_password
+    HOLLAEX_LOGIN_KEY:
+      from_secret: hollaex_network_testnet_login_key
+  settings:
+    exchange_id: 539
+    exchange_name: "Next"
+    kit_branch: "next"
+
+- name: slack_noti_job_end
+  image: plugins/slack
+  settings:
+    channel: deployment
+    webhook:
+      from_secret: slack_webhook
+  when:
+    status: [success, failure]
+
+trigger:
+  branch:
+  - next
+  event:
+  - push
+
+  

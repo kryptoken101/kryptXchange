@@ -1,0 +1,378 @@
+$trade-tab--arrow-size: 0.4rem;
+
+@import './components/_MarketList.scss';
+
+$toggle-size: 14px;
+$toggle-margin: 2px;
+
+.trade_tabs-container {
+	color: $colors-deactivate-color2;
+	height: inherit;
+	max-width: 100%;
+	margin: 3rem auto;
+	width: 75rem;
+
+	.app-icon {
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 5rem !important;
+		margin: 1rem auto;
+		width: 8rem;
+	}
+
+	.trade-tab-app-title {
+		font-family: $raleway-light--font-family;
+		letter-spacing: 0.3rem;
+		font-size: 0.8rem;
+	}
+
+	.trade_tabs-content {
+		border-top: 2px solid $colors-main-border;
+		font-size: 0.8rem;
+		.toggle_button-wrapper {
+			.toggle-content {
+				.toggle-action_button {
+					width: $toggle-size * 3 !important;
+					&.left {
+    					opacity: 1 !important;
+						.toggle-action_button-display {
+							$right-pos: $toggle-size + $toggle-margin * 2;
+							right: calc(100% - #{$right-pos}) !important;
+						}
+					}
+					&.right .toggle-action_button-display {
+						right: 0 !important;
+					}
+				}
+			}
+		}
+	}
+
+	.trade_tabs-link {
+		color: $link;
+		margin: 0.5rem 0;
+		padding: 0 0.5rem;
+		text-transform: uppercase;
+	}
+
+	.link-separator {
+		border-right: 1px solid $colors-border;
+	}
+
+	.trade_tabs-search-field {
+		background-color: $app-background-color;
+		color: $colors-deactivate-color1;
+		margin: 0;
+		padding-right: 0.5rem;
+
+		&::placeholder {
+			color: $colors-deactivate-color1;
+		}
+	}
+
+	.trade_tabs-search-outline {
+		background: $trade-tabs-inactive-color;
+	}
+
+	.tabs-pair-details {
+		font-size: 1.2rem;
+		width: 32rem;
+	}
+	.currency-ball-image-wrapper {
+		height: 2.2rem;
+		padding-right: 10px;
+	}
+	.trade_tab-icons {
+		width: 3rem;
+
+		svg {
+			.btc0,
+			.btc1 {
+				fill: $coin-btc;
+			}
+			.eth0,
+			.eth1 {
+				fill: $coin-eth;
+			}
+			.bch-icon {
+				fill: $coin-bch;
+			}
+			.xrp-icon {
+				fill: $coin-xrp;
+			}
+			.xmr-icon {
+				fill: $coin-xmr;
+			}
+			.ada-icon {
+				fill: $coin-ada;
+			}
+			.bnb-icon {
+				fill: $coin-bnb;
+			}
+			.dai-icon {
+				fill: $coin-dai;
+			}
+			.eos-icon {
+				fill: $coin-eos;
+			}
+			.ltc-icon {
+				fill: $coin-ltc;
+			}
+			.trx-icon {
+				fill: $coin-trx;
+			}
+			.tusd-icon {
+				fill: $coin-tusd;
+			}
+			.xlm-icon {
+				fill: $coin-xlm;
+			}
+			.default-icon {
+				fill: $colors-black !important;
+			}
+		}
+	}
+
+	.trade_tab-pair-title {
+		color: $colors-main-black;
+		font-size: $font-size-main;
+		font-weight: bold;
+	}
+
+	.trade_tab-pair-sub-title {
+		font-size: $font-size-subtext;
+	}
+
+	.trade_tab-pair-volume {
+		font-size: $font-size-subtext;
+		text-align: right;
+		padding-right: 0.3rem;
+	}
+
+	.trade_tab-pair-price {
+		color: $colors-main-black;
+		font-size: $font-size-subhead2;
+		font-weight: bold;
+	}
+
+	.price-diff-down {
+		color: $sell;
+		padding: 0 5px;
+		border-radius: 2px;
+		transition: all 0.2s ease-out 0s;
+	}
+
+	.glance-price-diff-down {
+		&.entering,
+		&.exiting {
+			color: $sell-bids-text;
+			background-color: $sell;
+
+			&.glance-trade-tab-price_diff_down:before {
+				border-color: $sell-bids-text;
+			}
+		}
+	}
+
+	.price-diff-up {
+		color: $buy;
+		padding: 0 5px;
+		border-radius: 2px;
+		transition: all 0.2s ease-out 0s;
+	}
+
+	.glance-price-diff-up {
+		&.entering,
+		&.exiting {
+			color: $buy-bids-text;
+			background-color: $buy;
+
+			&.glance-trade-tab-price_diff_up:before {
+				border-color: $buy-bids-text;
+			}
+		}
+	}
+
+	.trade-tab-price_diff_up {
+		margin: auto 0;
+	}
+
+	.trade-tab-price_diff_up:before {
+		@include css-triangle($buy, 'up', $trade-tab--arrow-size);
+		display: inline-block;
+		margin-bottom: 0.2rem;
+		margin-right: 0.5rem;
+		position: relative;
+		top: calc(50% - 0.6rem);
+	}
+
+	.trade-tab-price_diff_down {
+		margin: auto 0;
+	}
+
+	.trade-tab-price_diff_down:before {
+		@include css-triangle($sell, 'down', $trade-tab--arrow-size);
+		display: inline-block;
+		margin-right: 0.5rem;
+		position: relative;
+		top: calc(50% - 0.6rem);
+	}
+
+	.trade-tab-list {
+		background-image: linear-gradient(
+			$app-background-color,
+			$market-card_gradient_background
+		);
+		border: 1px solid $colors-super-pale-black;
+		border-radius: 0.5rem;
+		padding: 1rem 0 0;
+		margin: 2rem 1.5rem;
+		-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+		-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+
+		svg {
+			.xht-icon-1 {
+				fill: $app-background-color !important;
+			}
+		}
+
+		&:hover {
+			border: 1px solid $colors-border;
+			color: $colors-black;
+			position: relative;
+			bottom: 0.5rem;
+			right: 0.5rem;
+
+			svg {
+				.btc0,
+				.btc1 {
+					fill: $coin-btc;
+				}
+				.eth0,
+				.eth1 {
+					fill: $coin-eth;
+				}
+				.bch-icon {
+					fill: $coin-bch;
+				}
+				.xrp-icon {
+					fill: $coin-xrp;
+				}
+				.xmr-icon {
+					fill: $coin-xmr;
+				}
+				.ada-icon {
+					fill: $coin-ada;
+				}
+				.bnb-icon {
+					fill: $coin-bnb;
+				}
+				.dai-icon {
+					fill: $coin-dai;
+				}
+				.eos-icon {
+					fill: $coin-eos;
+				}
+				.ltc-icon {
+					fill: $coin-ltc;
+				}
+				.trx-icon {
+					fill: $coin-trx;
+				}
+				.tusd-icon {
+					fill: $coin-tusd;
+				}
+				.xlm-icon {
+					fill: $coin-xlm;
+				}
+				.default-icon {
+					fill: $colors-black !important;
+				}
+			}
+		}
+	}
+
+	.market-card__sparkline-wrapper {
+		padding-top: 10px;
+		height: 12rem;
+	}
+}
+
+.layout-mobile {
+	.trade_tabs-container {
+		overflow-y: scroll;
+	}
+
+	@media screen and (max-width: 1096px) {
+		.trade_tabs-container {
+			.trade-tab-list {
+				margin: 1.5rem 1rem;
+			}
+			.trade_tab-icons {
+				width: 2.25rem;
+			}
+			.tabs-pair-details {
+				font-size: 1rem;
+				width: 28rem;
+			}
+			.market-card__sparkline-wrapper {
+				height: 10rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: $bp-xs) {
+		.trade_tabs-container {
+			overflow-y: scroll;
+			.trade-tab-list {
+				margin: 1.5rem 1rem;
+			}
+			.trade_tab-icons {
+				width: 2.25rem;
+			}
+			.tabs-pair-details {
+				font-size: 1.5rem;
+				width: 34rem;
+				max-width: 96%;
+			}
+			.market-card__sparkline-wrapper {
+				height: 12rem;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1096px) {
+	.trade_tabs-container {
+		.trade-tab-list {
+			margin: 1.5rem 1rem;
+		}
+		.trade_tab-icons {
+			width: 2.25rem;
+		}
+		.tabs-pair-details {
+			font-size: 1rem;
+			width: 26rem;
+		}
+		.market-card__sparkline-wrapper {
+			height: 9rem;
+		}
+	}
+}
+
+@media screen and (max-width: $bp-xs) {
+	.trade_tabs-container {
+		.trade_tab-icons {
+			width: 1.5rem;
+		}
+		.tabs-pair-details {
+			font-size: 1rem;
+			width: 20.5rem;
+		}
+		.market-card__sparkline-wrapper {
+			height: 7rem;
+		}
+	}
+}

@@ -1,0 +1,175 @@
+.controls-wrapper {
+	display: flex;
+	margin-bottom: 16px;
+}
+
+.upperCase {
+	text-transform: uppercase;
+}
+
+.app-wrapper .ant-alert {
+	margin-bottom: 16px;
+}
+
+.controls-search {
+	flex: 3;
+	flex-direction: column;
+}
+
+.controls-refresh {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+.filters-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.filters-wrapper-filters {
+	/* flex: 2; */
+	display: flex;
+	flex-direction: column;
+}
+
+.filters-wrapper-buttons {
+	/* flex: 1; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.admin-deposit-wrapper
+	.filters-wrapper-filters
+	.ant-select-single:not(.ant-select-customize-input)
+	.ant-select-selector,
+.admin-deposit-wrapper .filters-wrapper-filters .ant-picker {
+	background-color: var(--admin_panel_input);
+	color: #ffffff;
+}
+.admin-deposit-wrapper .filters-wrapper-filters {
+	flex-direction: row;
+}
+.admin-deposit-wrapper .filters-wrapper-buttons {
+	align-self: flex-end;
+	flex: none;
+	margin-bottom: 8px;
+}
+.blue-admin-table .ant-table-row-expand-icon {
+	background-color: var(--admin_panel_row_expand_icon);
+	border-color: #c4c4c4;
+}
+.admin-deposit-wrapper .ant-select .ant-select-selection-placeholder {
+	opacity: 0.6;
+}
+.admin-deposit-wrapper .ant-select .ant-select-arrow,
+.admin-deposit-wrapper .ant-picker .ant-picker-suffix {
+	color: #ffffff;
+}
+.blue-admin-table .ant-table-row-expand-icon::before,
+.blue-admin-table .ant-table-row-expand-icon::after {
+	background-color: #ffffff;
+}
+.filter-button {
+	min-width: 50%;
+}
+
+.filters-wrapper-buttons .filter-button:not(:last-child) {
+	margin-bottom: 16px;
+}
+
+.admin-deposit-wrapper .filter-alert {
+	margin-bottom: 8px;
+	opacity: 0.95;
+}
+
+.filter-select-wrapper,
+.filter-input-wrapper {
+	/* display: flex; */
+	margin-bottom: 8px;
+}
+
+.filter-select-label,
+.filter-input-label {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	/* justify-content: flex-end; */
+	padding-bottom: 5px;
+}
+
+.select-container,
+.input-container {
+	flex: 3;
+}
+
+.input-description {
+	padding-top: 4px;
+	color: grey;
+	font-size: 0.75em;
+}
+
+.filter-date-field {
+	width: 100%;
+}
+
+.adjacent-fields {
+	width: 50%;
+}
+
+.flx-3 {
+	flex: 3;
+	margin-left: 16px;
+}
+
+.validate-wrapper .anchor {
+	text-decoration: underline !important;
+	cursor: pointer;
+}
+
+.Validate-Dismiss-popup {
+	padding: 1rem;
+	color: #ffffff;
+}
+
+.Validate-Dismiss-popup .ant-btn {
+	color: #ffffff;
+}
+.Validate-Dismiss-popup .title {
+	font-size: 24px;
+	font-weight: bold;
+}
+.Validate-Dismiss-popup .confirm-container {
+	border: 1px solid #ffffff;
+	padding: 1.5rem;
+}
+.Validate-Dismiss-popup .legend {
+	background-color: #0000ff;
+	left: 1rem;
+	top: 12px;
+	padding: 5px;
+	position: relative;
+}
+.Validate-Dismiss-popup .field-label {
+	color: #ffffff;
+}
+.Validate-Dismiss-popup .edit-link-wrapper {
+	position: relative;
+}
+.Validate-Dismiss-popup .edit-link {
+	position: absolute;
+	bottom: 28px;
+	right: 16px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.Validate-Dismiss-popup .ant-input {
+	width: 80%;
+}
+
+.admin-deposit-wrapper .blue-admin-table .ant-table {
+	overflow: scroll;
+}

@@ -1,0 +1,140 @@
+$row--height: 3rem;
+$row--size: calc(#{$row--height} - #{$sidebar-sections-padding});
+
+.sidebar-row {
+	// padding-top: $sidebar-sections-padding / 2;
+	// padding-bottom: $sidebar-sections-padding / 2;
+	min-height: $row--height;
+	min-width: 10rem;
+
+	.cell-wrapper {
+		padding-left: $sidebar-sections-padding;
+		padding-right: $sidebar-sections-padding;
+	}
+}
+
+.app_bar {
+	.sidebar-row {
+		min-width: 3rem;
+	}
+}
+.cell-wrapper {
+}
+
+.sidebar-bottom-wrapper {
+	min-height: $bottom_bar--height;
+	max-height: $bottom_bar--height;
+	background-color: $bottom-bar--background;
+	color: $base_top-bar-navigation_text;
+	width: 100%;
+	padding: 0.5rem 0.5rem 0.8rem 0.5rem;
+	justify-content: space-evenly;
+
+	.sidebar-bottom-button {
+		justify-content: space-between;
+		flex-direction: column;
+		display: flex;
+		align-items: center;
+		width: 20%;
+
+		.sidebar-bottom-icon {
+			svg {
+				.post-icon,
+				.chat-0,
+				.account-svg-1,
+				.quick-trade-tab-active {
+					fill: $base_top-bar-navigation_text_inactive;
+				}
+
+				.tab-wallet0,
+				.trade-active-2,
+				.chat-0,
+				.quick-trade-tab-active {
+					stroke: $base-top-bar-navigation_text_inactive;
+				}
+
+				.tab-wallet0,
+				.quick-trade-tab-active {
+					fill: transparent;
+				}
+			}
+		}
+
+		&.active {
+			.sidebar-bottom-icon {
+				svg {
+					.post-icon,
+					.chat-0,
+					.account-svg-1 {
+						fill: $base_top-bar-navigation_text;
+					}
+
+					.tab-wallet0,
+					.trade-active-2,
+					.chat-0,
+					.quick-trade-tab-active {
+						stroke: $base-top-bar-navigation_text;
+					}
+				}
+			}
+		}
+		.bottom-bar-text {
+			font-size: 10px;
+			text-align: center;
+			margin-top: -17px;
+			font-weight: lighter;
+			color: $base_top-bar-navigation_text-inactive;
+			white-space: nowrap;
+			width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.bottom-text-acttive {
+			color: $base_top-bar-navigation_text !important;
+			font-weight: bolder;
+		}
+		.sidebar-bottom-icon {
+			@include size(3rem);
+			> div {
+				display: flex;
+				justify-content: center;
+			}
+			svg {
+				@include size(3rem);
+				stroke: $colors-deactivate-color2;
+				fill: transparent;
+			}
+		}
+		img.sidebar-bottom-icon {
+			@include size(3rem);
+		}
+	}
+}
+
+.direction_ltr {
+	.sidebar-row {
+		.cell-wrapper {
+			&:not(:last-child) {
+				border-right: 1px solid $colors-border;
+			}
+		}
+	}
+}
+
+.direction_rtl {
+	.sidebar-row {
+		.cell-wrapper {
+			&:not(:last-child) {
+				border-left: 1px solid $colors-border;
+			}
+		}
+	}
+}
+
+@media screen and (max-height: 600px) {
+	.sidebar-bottom-icon {
+		svg {
+			stroke: none !important;
+		}
+	}
+}

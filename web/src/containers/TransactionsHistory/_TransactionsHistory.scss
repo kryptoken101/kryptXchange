@@ -1,0 +1,260 @@
+@import './Filters';
+
+.layout-mobile {
+	.tab_controller-wrapper {
+		height: auto;
+	}
+
+	.inner_container {
+		height: calc(100% - 4.5rem);
+		.history_block-wrapper {
+			max-height: calc(100% - 1rem);
+			overflow-x: scroll;
+
+			.table-content {
+				overflow-x: scroll;
+				white-space: nowrap;
+				width: 100%;
+			}
+			.table-wrapper {
+				.table_header-wrapper,
+				.table_body-wrapper {
+					font-size: $table-header-column--font-size !important;
+				}
+				.table_body-wrapper {
+					height: 4.5rem;
+				}
+			}
+		}
+	}
+	.display_table-wrapper {
+		.display_table-cell {
+			min-height: 2rem !important;
+		}
+	}
+
+	.table_container {
+		.table-content {
+			&.transactions-history-table {
+				overflow-x: auto;
+				position: relative;
+				thead,
+				td {
+					font-size: 1.2rem !important;
+				}
+				td {
+					padding: 0.5rem;
+					min-width: 9rem;
+				}
+
+				.sticky-col {
+					&.coin-cell {
+						width: 12rem !important;
+						min-width: 12rem !important;
+						max-width: 12rem !important;
+					}
+					position: -webkit-sticky;
+					position: sticky;
+					background-color: $app-sidebar-background;
+					left: 0;
+					width: 10rem !important;
+					min-width: 10rem !important;
+					max-width: 10rem !important;
+					z-index: 1;
+				}
+			}
+		}
+	}
+}
+
+.icon-cell {
+	width: 3rem;
+
+	> div {
+		margin: auto;
+	}
+}
+
+.cell_box-type {
+	> div {
+		color: white;
+	}
+
+	.withdraw,
+	.sell {
+		background-color: $history-color-sell;
+		color: $sell-bids-text;
+	}
+
+	.deposit,
+	.buy {
+		background-color: $history-color-buy;
+		color: $buy-bids-text;
+	}
+
+	&.fullfilled .cell-wrapper {
+		border: 1px solid $colors-main-border;
+		margin: 0;
+		padding: 1px;
+		min-width: 5rem;
+		max-width: 7rem;
+
+		> .cell_value-wrapper {
+			padding: 0 0.15rem;
+			position: relative;
+			width: 100%;
+			color: $trade-fill-indicator-text;
+			z-index: 2;
+
+			.cell_value-bar {
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				background-color: $trade-fill-indicator;
+				z-index: -1;
+			}
+		}
+	}
+}
+
+.amount_text {
+	.positive {
+		color: $colors-notifications-green;
+	}
+	.negative {
+		color: $colors-notifications-red;
+	}
+}
+
+.history_block-wrapper {
+	position: relative;
+	background-color: $app-sidebar-background;
+	padding: 20px;
+	margin: 20px 0;
+
+	.action_notification-svg svg {
+		width: 1.2rem !important;
+		height: 1.2rem !important;
+	}
+	.check-deposit-wrapper {
+		position: absolute;
+		right: 100px;
+		top: 2px;
+		text-transform: uppercase;
+		color: var(--specials_buttons-links-and-highlights);
+		font-size: 11px;
+		cursor: pointer;
+	}
+	.new-tag-wrapper {
+		position: relative;
+		.new-tag {
+			position: absolute;
+			right: 100%;
+			background-color: #008509;
+			padding: 0 7px;
+			color: #ffffff;
+			border-radius: 20px;
+			margin-right: 10px;
+		}
+	}
+	.check-deposit-txt {
+		right: 150px !important;
+	}
+	.loader_wrapper {
+		top: 0;
+		left: 0;
+	}
+	.table-wrapper {
+		.table_body-wrapper.with_icon {
+			tr td:first-child {
+				border-top: 1px solid $colors-border !important;
+				border-bottom: 1px solid $colors-border !important;
+			}
+			.currency-ball-image-wrapper {
+				padding-right: 8px;
+				padding-bottom: 12px;
+			}
+			.coin-icons {
+				width: 30px;
+				padding-top: 4px;
+			}
+		}
+		.table_body-wrapper {
+			.currency-ball {
+				width: 25px;
+				line-height: 10px;
+				margin-top: 6px;
+			}
+		}
+	}
+	.ant-picker-clear {
+		background: none;
+	}
+	.action_notification-wrapper {
+		top: 21px;
+	}
+	.download-icon {
+		.action_notification-svg svg path {
+			fill: $link;
+		}
+	}
+	.loader_background {
+		filter: opacity(0.25) !important;
+	}
+}
+
+.action_notification-svg svg {
+	@include size(2rem);
+	// .data-1 {
+	// }
+}
+
+.btn-tx,
+.withdrawal-cancel {
+	cursor: pointer;
+}
+
+.transaction-history-wrapper {
+	svg {
+		.trade-history-1,
+		.deposit-history-3,
+		.withdrawals-history-3,
+		.transaction-history-1,
+		.transaction-history-5 {
+			fill: $colors-black;
+		}
+	}
+	.icon_title-wrapper {
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+	.with_border_top {
+		border-top: none !important;
+	}
+}
+.display_table-wrapper {
+	.display_table-cell {
+		min-height: 1.2rem !important;
+		padding: 0 0.1rem !important;
+	}
+	&:first-child .display_table-body {
+		padding-top: 0.1rem !important;
+	}
+}
+
+.transaction-status {
+	font-weight: bold;
+
+	.completed {
+		color: $colors-notifications-green;
+	}
+
+	.pending {
+		color: $colors-notification-pending;
+	}
+
+	.rejected {
+		color: $colors-notifications-red;
+	}
+}

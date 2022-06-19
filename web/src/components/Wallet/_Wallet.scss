@@ -1,0 +1,229 @@
+$inner-section-margin: 0.5rem;
+$accordion_arrow-size: 0.3rem;
+$sections-font--color: $colors-deactivate-color2;
+
+.wallet_section-wrapper {
+	font-size: $font-size-subtext;
+	padding: 0.25rem 0;
+
+	.wallet_section-content > * {
+		margin-bottom: $inner-section-margin;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&.wallet_section-total_asset > * {
+		margin: $inner-section-margin 0;
+	}
+}
+
+@keyframes outer-round-anim {
+	0% {
+		transform: scale(0.5, 0.5);
+		background-color: $colors-border;
+		opacity: 0.5;
+	}
+	10% {
+		background-color: $colors-border;
+		opacity: 0.3;
+	}
+	30% {
+		background-color: $colors-border;
+		opacity: 0.2;
+	}
+	50% {
+    	transform: scale(1.5, 1.5);
+		background-color: $colors-border;
+	}
+	70% {
+		background-color: $colors-border;
+		opacity: 0;
+	}
+	100% {
+    	transform: scale(1, 1);
+		background-color: $colors-border;
+		opacity: 0;
+	}
+}
+
+@keyframes mymove {
+	10% {
+		background-color: var(--base_wallet-sidebar-and-popup);
+		opacity: 0.5;
+	}
+	30% {
+		background-color: var(--base_wallet-sidebar-and-popup);
+		opacity: 0.3;
+	}
+	50% {
+		background-color: var(--calculated_secondary-border);
+		opacity: 0.5;
+	}
+	70% {
+		background-color: var(--calculated_secondary-border);
+		opacity: 0.3;
+	}
+	100% {
+		background-color: var(--base_wallet-sidebar-and-popup);
+		opacity: 0.2;
+	}
+}
+
+.wallet-wrapper {
+	.icon_title-wrapper {
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+	.donut-container {
+		height: 18rem;
+		.donut-label-pair {
+			font-size: 0.8rem;
+		}
+		.rounded-loading {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			text-align: center;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			border: 1px solid #808080;
+			background-color: $colors-border !important;
+			animation: outer-round-anim 3s ease infinite;
+		}
+		.inner-round {
+			background-color: $app-sidebar-background;
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			margin: 0 auto;
+			border: 1px solid #808080;
+		}
+	}
+}
+
+.wallet_section-title {
+	text-transform: uppercase;
+	color: $sections-font--color;
+	font-size: $font-size-subtext;
+	> * {
+		margin: $inner-section-margin;
+	}
+}
+
+.wallet_section-title-amount {
+	color: $sections-font--color;
+	font-size: $font-size-subtext;
+}
+
+.wallet_section-total_asset {
+	font-size: 1rem;
+	color: $sections-font--color;
+
+	> span {
+		font-size: $font-size-subhead2;
+		line-height: 1;
+	}
+
+	&:first-child {
+		margin-bottom: 0;
+	}
+
+	&:last-child {
+		margin-top: 0;
+	}
+}
+
+.wallet_link {
+	margin: 0.5rem 0;
+	padding: 0 0.5rem;
+	text-transform: uppercase;
+}
+
+.direction_ltr {
+	.sidebar_section-container
+		.wallet-wrapper
+		.accordion_section_title
+		.wallet_section-title {
+		&:after {
+			@include css-triangle(
+				$colors-deactivate-color2,
+				'right',
+				$accordion_arrow-size
+			);
+			right: -$accordion_arrow-size;
+			top: calc(50% - #{$accordion_arrow-size});
+		}
+	}
+
+	.sidebar_section-container
+		.wallet-wrapper
+		.accordion_section--open
+		.accordion_section_title
+		.wallet_section-title {
+		color: $colors-main-black;
+		&:after {
+			border-left-color: $colors-main-black;
+		}
+	}
+}
+
+.wallet-wrapper {
+	.icon-title-wrapper {
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+	.loading-txt {
+		color: $sections-font--color !important;
+		margin-bottom: 1rem;
+	}
+	.loading-row-anime {
+		height: 20px;
+		border-radius: 7px;
+		width: 100%;
+		margin-bottom: 1rem;
+		animation: mymove 3s infinite;
+		animation-duration: 2s;
+	}
+}
+
+.direction_rtl {
+	.sidebar_section-container
+		.wallet-wrapper
+		.accordion_section_title
+		.wallet_section-title {
+		&:after {
+			@include css-triangle(
+				$colors-deactivate-color2,
+				'left',
+				$accordion_arrow-size
+			);
+			left: -$accordion_arrow-size;
+			top: calc(50% - #{$accordion_arrow-size});
+		}
+	}
+
+	.sidebar_section-container
+		.wallet-wrapper
+		.accordion_section--open
+		.accordion_section_title
+		.wallet_section-title {
+		color: $colors-main-black;
+		&:after {
+			border-right-color: $colors-main-black;
+		}
+	}
+}
+
+@media (min-width: 1920px) {
+	.wallet-wrapper {
+		.donut-container {
+			height: 19rem;
+
+			.donut-label-pair {
+				font-size: 1rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.otp_form-wrapper {
+	width: 38rem;
+}
+
+.otp_form-title-wrapper {
+	border-top: 1px solid $colors-border;
+	margin: 1rem 0;
+	position: relative;
+
+	.otp_form-title-text {
+		font-weight: bold;
+		font-size: $font-size-main;
+	}
+}
+
+.otp_form-fields {
+	margin-bottom: 1rem;
+}
+
+.layout-mobile {
+	.otp_form-wrapper {
+		flex: 1;
+		overflow-y: scroll;
+	}
+}

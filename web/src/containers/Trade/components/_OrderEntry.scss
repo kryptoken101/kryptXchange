@@ -1,0 +1,210 @@
+@mixin entry_form($theme-color, $theme-color-disabled, $theme-text-color) {
+	flex: 1;
+	$row-height: 2.5rem;
+	color: $colors-black;
+
+	> div:not(:last-child) {
+		margin-bottom: 0.5rem;
+	}
+
+	.trade_order_entry-selector {
+		:before {
+			content: '';
+			position: absolute;
+			// top: 0;
+			top: -2px;
+			background: $colors-main-black;
+			left: 0;
+			width: 100%;
+			height: 1px;
+		}
+		position: relative;
+
+		> div {
+			line-height: 2rem;
+		}
+
+		// &:after {
+		// 	content: '';
+		// 	position: absolute;
+		// 	top: 1px;
+		// 	background: $trade-section-border--color;
+		// 	left: 0;
+		// 	width: 100%;
+		// 	height: 1px;
+		// }
+
+		.active {
+			position: relative;
+			color: $colors-main-black;
+			font-weight: bold;
+
+			&:after {
+				content: '';
+				position: absolute;
+				// top: 0;
+				top: -2px;
+				background: $colors-main-black;
+				left: 0;
+				width: 100%;
+				height: 4px;
+			}
+		}
+	}
+
+	.trade_order_entry-action_selector {
+		border: 1px solid $theme-color;
+		.active {
+			background-color: $theme-color;
+			color: $theme-text-color;
+			font-weight: bold;
+		}
+	}
+
+	.trade_order_entry-review {
+		border-top: 1px solid $trade-section-border-disabled--color;
+		line-height: 1.5rem;
+		.text-price {
+			color: $colors-main-black;
+		}
+		.blue-link {
+			color: $link;
+		}
+	}
+
+	.trade_order_entry-action_selector,
+	.trade_order_entry-form-action {
+		height: $row-height;
+	}
+
+	.trade_order_entry-selector,
+	.trade_order_entry-action_selector,
+	.trade_order_entry-form {
+		> * {
+			flex: 1;
+		}
+	}
+
+	.trade_order_entry-form_inputs-wrapper {
+		.trade_order_entry-form_fields-wrapper > div:not(:last-child) {
+			margin-bottom: 0.5rem;
+		}
+
+		.trade_order_entry-form-action {
+			margin-top: 0.5rem;
+			background-color: $theme-color !important;
+			color: $theme-text-color;
+			font-weight: bold;
+
+			&:disabled {
+				background-color: $theme-color-disabled !important;
+				color: $dark-font-sub-text-1-color !important;
+			}
+		}
+
+		.warning_text {
+			margin-top: 0.25rem;
+		}
+
+		.form-error {
+			margin: 0.5rem 0;
+		}
+	}
+
+	.trade_order_entry-form_fields-wrapper {
+		margin-bottom: 0.2rem !important;
+		.ant-collapse-header {
+			text-align: right;
+			color: $colors-black;
+			padding: 0;
+			font-size: $font-size-mobile-txt;
+		}
+		.ant-collapse-content-box {
+			padding: 0;
+		}
+		.underline-text {
+			font-size: 11px;
+		}
+	}
+}
+
+.trade_order_entry-wrapper {
+	&.order_side-selector-sell {
+		@include entry_form($sell, $colors-deactivate-color1, $sell-bids-text);
+	}
+	&.order_side-selector-buy {
+		@include entry_form($buy, $colors-deactivate-color1, $buy-bids-text);
+	}
+	.post-only-txt {
+		font-size: 1rem;
+		color: $colors-deactivate-color2;
+		cursor: pointer;
+	}
+}
+
+.risky-trade-wrapper {
+	width: 32rem;
+	.icon_title-wrapper {
+		.icon_title-svg {
+			height: 10rem;
+			width: 10rem;
+		}
+		.icon_title-svg svg {
+			height: 10rem;
+			width: 10rem;
+		}
+		.icon_title-text.title {
+			font-size: 2rem;
+		}
+		.icon_title-text {
+			margin-top: 3rem;
+			text-align: left !important;
+			width: 100%;
+		}
+	}
+	.risky_managment_percentage {
+		color: $colors-notifications-red;
+	}
+}
+
+.layout-mobile {
+	.trade_order_entry-selector {
+		font-size: $font-size-mobile-txt !important;
+	}
+	.trade_orderbook-bids {
+		.trade_orderbook-cell {
+			font-size: $font-size-mobile-txt !important;
+		}
+	}
+	.trade_input-wrapper {
+		.trade_input-label {
+			font-size: $font-size-mobile-innertxt !important;
+		}
+		.trade_input-input-wrapper {
+			> input {
+				font-size: $font-size-mobile-txt !important;
+			}
+		}
+	}
+	.trade_order_entry-review {
+		> div {
+			font-size: $font-size-mobile-innertxt !important;
+		}
+	}
+	.holla-button {
+		font-size: $font-size-mobile-txt !important;
+	}
+	.trade_orderbook-wrapper {
+		.trade_asks-limit_bar {
+			.orderbook-limit_bar-wrapper {
+				.orderbook-limit_bar-text {
+					font-size: $font-size-mobile-innertxt !important;
+				}
+			}
+		}
+	}
+
+	.risky-trade-wrapper {
+		margin: auto;
+	}
+}

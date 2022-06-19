@@ -1,0 +1,23 @@
+
+.layout__area--top div {
+    background-color: var(--base_wallet-sidebar-and-popup) !important;
+}
+
+.layout__area--top div div[class^="fadeRight"] {
+    background-image: linear-gradient(90deg,rgba(19,23,34,0), var(--base_wallet-sidebar-and-popup)) !important;
+}
+
+.screen-container {
+    border: 1px solid #d1d1d1;
+    display: flex;
+    padding: 3px;
+    align-items: center;
+}
+
+.screen-content {
+    margin: 5px;
+}
+
+.theme-dark .screen-container { 
+   border: 1px solid #535353;
+}

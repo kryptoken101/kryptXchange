@@ -1,0 +1,41 @@
+$cell-height: 1.5rem;
+
+.layout-mobile {
+	.display_table-wrapper {
+		font-size: $regular--font-size;
+	}
+}
+
+.display_table-wrapper {
+	position: relative;
+	height: 100%;
+
+	.display_table-header {
+		// flex: 0;
+		// height: $cell-height;
+		font-weight: bold;
+		border-bottom: 1px solid $colors-border;
+
+		.display_table-cell {
+		}
+	}
+
+	.display_table-body {
+		overflow-y: auto;
+
+		.display_table-cell {
+		}
+	}
+
+	.display_table-cell {
+		min-height: $cell-height;
+		padding: 0.1rem;
+	}
+	.ant-select-arrow {
+		z-index: 1;
+	}
+}
+
+.f-1 {
+	flex: 1;
+}
